@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Slider</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="card">
+        <div id="form-view">
+            <div class="icon-wrapper">
+                <div class="icon-glow"></div>
+                <div class="icon-stage" id="icon-container"></div>
+            </div>
+
+            <h2>How was your experience?</h2>
+            <div class="mood-label" id="mood-text">Okay</div>
+
+            <div class="slider-container">
+                <input type="range" min="0" max="100" value="50" id="feedback-slider" aria-label="Satisfaction level">
+            </div>
+
+            <button type="button" class="submit-btn" id="submit-btn">Send Feedback</button>
+        </div>
+
+        <div class="success-overlay" id="success-view">
+            <div style="color: #00b894; font-size: 80px; margin-bottom: 20px;">
+                <i class="fa-solid fa-circle-check pop-anim"></i>
+            </div>
+            <h2>Thank You!</h2>
+            <p style="color: var(--text-sub); margin-bottom: 30px;">We value your feedback.</p>
+            <button class="submit-btn" onclick="location.reload()"
+                style="background: #f1f2f6; color: #333;">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
