@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aminul | Tech Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Website Name<span>.</span></div>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+            </ul>
+            <div class="menu-container">
+                <div class="three-dot-menu" onclick="toggleMenu(event)">
+                    <span></span><span></span><span></span>
+                </div>
+                <ul class="dropdown-menu" id="dropdownMenu">
+                    <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li><a href="#"><i class="fas fa-shield-alt"></i> Privacy</a></li>
+                    <li><hr></li>
+                    <li><a href="#" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="slider-container">
+        <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1920');">
+            <div class="content">
+                <h1>Full Stack Developer</h1>
+                <p>Building high-performance web applications and network solutions.</p>
+                <button class="btn">View My Work</button>
+            </div>
+        </div>
+        
+        <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1920');">
+            <div class="content">
+                <h1>Tech Entrepreneur</h1>
+                <p>Turning innovative ideas into scalable technology businesses.</p>
+                <button class="btn">Let's Connect</button>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="prev"><i class="fas fa-chevron-left"></i></button>
+            <button id="next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
