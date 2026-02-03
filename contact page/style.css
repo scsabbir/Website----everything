@@ -1,0 +1,93 @@
+:root {
+    --accent: #00f2ff;
+    --purple: #7000ff;
+    --dark: #050505;
+}
+
+body {
+    margin: 0;
+    background-color: var(--dark);
+    font-family: 'Inter', sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+/* --- Animated Mesh Background --- */
+.bg-wrapper {
+    position: fixed;
+    width: 100vw; height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    filter: blur(80px); /* The magic ingredient for the fluid look */
+}
+
+.blob {
+    position: absolute;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: move 20s infinite alternate;
+}
+
+.blob-1 { background: var(--accent); top: -10%; left: -10%; animation-duration: 25s; }
+.blob-2 { background: var(--purple); bottom: -10%; right: -10%; animation-duration: 30s; }
+.blob-3 { background: #0044ff; top: 40%; left: 30%; width: 600px; animation-duration: 20s; }
+
+@keyframes move {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(100px, 100px) scale(1.2); }
+}
+
+/* --- Contact Card --- */
+.contact-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.glass-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1100px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+}
+
+.content-left { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
+.badge { font-size: 12px; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; }
+.content-left h1 { font-size: 3.5rem; line-height: 1.1; margin: 0; }
+.content-left h1 span { color: rgba(255,255,255,0.3); }
+
+.form-right { background: rgba(0,0,0,0.2); padding: 60px; }
+
+/* --- Inputs --- */
+.input-box { position: relative; margin-bottom: 30px; }
+.input-box input, .input-box textarea {
+    width: 100%; padding: 10px 0; background: none; border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2); color: white; outline: none;
+}
+.input-box label { position: absolute; left: 0; top: 10px; color: #666; transition: 0.3s; pointer-events: none; }
+
+.input-box input:focus ~ label, .input-box input:valid ~ label {
+    top: -20px; font-size: 12px; color: var(--accent);
+}
+
+/* --- Button --- */
+.glow-btn {
+    width: 100%; padding: 15px; background: var(--accent); border: none; border-radius: 10px;
+    font-weight: bold; cursor: pointer; transition: 0.3s;
+}
+.glow-btn:hover { box-shadow: 0 0 20px var(--accent); transform: translateY(-2px); }
+
+/* Mobile */
+@media (max-width: 768px) {
+    .glass-card { grid-template-columns: 1fr; height: 90vh; overflow-y: auto; }
+    .content-left h1 { font-size: 2.5rem; }
+}
